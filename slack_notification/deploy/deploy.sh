@@ -1,5 +1,10 @@
 #!/bin/bash
 
+source /home/elixir/notion_slack_api_bot/.venv/bin/activate
+pip install -r /home/elixir/notion_slack_api_bot/requirements.txt
+
+export $(grep -v '^#' /home/elixir/notion_slack_api_bot/.env | xargs)
+
 # 배포 시작 알림 스크립트 실행
 python3 ~/notion_slack_api_bot/slack_notification/deploy/deploy_start.py
 
